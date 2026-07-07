@@ -10,11 +10,11 @@ export default function CategoryBar({
   onCategoryChange,
 }: CategoryBarProps) {
   return (
-    <section className="bg-[#FFF8F0] pb-12">
+    <section className="bg-[#FFF8F0] pb-8 sm:pb-10 md:pb-12">
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4">
 
           {categories.map((category) => {
             const active = selectedCategory === category;
@@ -24,16 +24,21 @@ export default function CategoryBar({
                 key={category}
                 onClick={() => onCategoryChange(category)}
                 className={`
-                  px-7
-                  py-3
+                  px-4
+                  sm:px-6
+                  md:px-7
+                  py-2
+                  sm:py-3
                   rounded-full
-                  text-sm
+                  text-xs
+                  sm:text-sm
                   md:text-base
                   font-medium
+                  whitespace-nowrap
                   transition-all
                   duration-300
-                  shadow-md
                   border
+                  shadow-md
                   ${
                     active
                       ? "bg-[#8B5E3C] text-white border-[#8B5E3C] scale-105 shadow-xl"

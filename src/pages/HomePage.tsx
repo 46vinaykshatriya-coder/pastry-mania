@@ -17,33 +17,30 @@ export default function HomePage({ onEnter }: HomePageProps) {
       className="min-h-screen bg-[#FFF8F0]"
       style={{ fontFamily: "Poppins" }}
     >
-      {/* Navbar */}
-     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-[#F2E5D8] shadow-sm">
+    {/* Navbar */}
+<nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#F3E6D9] shadow-sm">
 
-  <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
+  <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3">
 
     {/* Logo */}
-
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-3">
 
       <img
         src={logo}
         alt="Pastry Mania"
-        className="h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
+        className="h-12 sm:h-16 lg:h-20 w-auto object-contain"
       />
 
       <div>
 
         <h1
-          className="text-3xl font-bold text-[#3A2A1E]"
-          style={{
-            fontFamily: "Playfair Display",
-          }}
+          className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#3A2A1E] leading-none"
+          style={{ fontFamily: "Playfair Display" }}
         >
           Pastry Mania
         </h1>
 
-        <p className="text-sm tracking-[4px] uppercase text-[#B98B62]">
+        <p className="uppercase tracking-[4px] sm:tracking-[6px] text-[10px] sm:text-xs text-[#B98B62] mt-1">
           Premium Cake Boutique
         </p>
 
@@ -51,11 +48,26 @@ export default function HomePage({ onEnter }: HomePageProps) {
 
     </div>
 
-    {/* Right Side */}
+    {/* Button */}
 
     <button
       onClick={onEnter}
-      className="bg-[#8B5E3C] hover:bg-[#6B4423] hover:scale-105 transition-all duration-300 text-white px-8 py-4 rounded-full shadow-xl font-semibold"
+      className="
+      bg-[#8B5E3C]
+      hover:bg-[#6B4423]
+      text-white
+      font-semibold
+      rounded-full
+      shadow-lg
+      transition
+      duration-300
+      px-5
+      py-3
+      sm:px-8
+      sm:py-4
+      text-sm
+      sm:text-base
+      "
     >
       Explore Menu
     </button>
@@ -64,202 +76,349 @@ export default function HomePage({ onEnter }: HomePageProps) {
 
 </nav>
 
-      {/* Hero */}
-      <section className="container mx-auto px-6 pt-12 pb-8">
+     {/* Hero */}
+<section className="relative overflow-hidden bg-gradient-to-b from-[#FFF8F0] via-[#FFF6ED] to-[#FFF8F0]">
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-20">
 
-          <div>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-            <span className="bg-[#F5E6D3] text-[#8B5E3C] px-5 py-2 rounded-full text-sm font-semibold">
-              Premium Cakes & Desserts
-            </span>
+      {/* Left */}
+      <div>
 
-            <h1
-             className="text-6xl md:text-7xl mt-6 leading-[1.1]"
-              style={{ fontFamily: "Playfair Display" }}
-            >
-              Crafted With Love,
-              <br />
-              Baked To
-              <span className="text-[#C89F7B]">
-                {" "}
-                Perfection
-              </span>
-            </h1>
+        <span className="inline-block bg-[#F5E6D3] text-[#8B5E3C] px-4 py-2 rounded-full text-xs sm:text-sm font-semibold tracking-wide">
+          Premium Cakes & Desserts
+        </span>
 
-            <p className="mt-8 text-xl text-[#5A4334] text-xl leading-8 ">
-              Discover handcrafted cakes, premium pastries and custom
-              creations designed to make every celebration memorable.
-              Every cake is made with passion, creativity and the finest ingredients.
-            </p>
+        <h1
+          className="mt-6 text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight text-[#3A2A1E]"
+          style={{ fontFamily: "Playfair Display" }}
+        >
+          Crafted With Love
+          <br />
+          Baked To
+          <span className="text-[#8B5E3C]"> Perfection</span>
+        </h1>
 
-            <div className="flex gap-4 mt-10 flex-wrap">
+        <p className="mt-6 text-base sm:text-lg lg:text-xl text-[#5A4334] leading-8 max-w-xl">
+          Every cake is handcrafted with premium ingredients and elegant
+          designs to make birthdays, weddings and every celebration
+          unforgettable.
+        </p>
 
-              <button
-                onClick={onEnter}
-                className="bg-[#8B5E3C] text-white px-8 py-4 rounded-full shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
-              >
-                Browse Collection
-              </button>
+        <div className="flex flex-col sm:flex-row gap-4 mt-8">
 
-              <a
-                href="https://wa.me/7025500740"
-                target="_blank"
-                rel="noreferrer"
-                className="border-2 border-[#8B5E3C] text-[#8B5E3C] px-8 py-4 rounded-full"
-              >
-                Order Now
-              </a>
+          <button
+            onClick={onEnter}
+            className="bg-[#8B5E3C] hover:bg-[#6B4423] text-white px-8 py-4 rounded-full shadow-xl transition duration-300 hover:scale-105"
+          >
+            Browse Collection
+          </button>
 
-            </div>
-
-          </div>
-
-          <div>
-
-            <img
-              src="https://images.unsplash.com/photo-1578985545062-69928b1d9587"
-              alt="Cake"
-              className="rounded-[40px] shadow-2xl w-full"
-            />
-
-          </div>
+          <a
+            href="https://wa.me/6363322889"
+            target="_blank"
+            rel="noreferrer"
+            className="border-2 border-[#8B5E3C] text-[#8B5E3C] px-8 py-4 rounded-full text-center hover:bg-[#8B5E3C] hover:text-white transition duration-300"
+          >
+            Order on WhatsApp
+          </a>
 
         </div>
 
-      </section>
+      </div>
 
+      {/* Right */}
+
+      <div className="relative">
+
+        <div className="absolute -top-6 -left-6 w-24 h-24 bg-[#F5E6D3] rounded-full blur-3xl opacity-70"></div>
+
+        <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-[#EFD6BE] rounded-full blur-3xl opacity-70"></div>
+
+        <img
+          src="https://images.unsplash.com/photo-1578985545062-69928b1d9587"
+          alt="Cake"
+          className="relative rounded-[30px] shadow-2xl w-full h-[280px] sm:h-[420px] lg:h-[620px] object-cover hover:scale-[1.02] transition duration-500"
+        />
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
       {/* Features */}
+<section className="py-12 lg:py-20 bg-[#FFF8F0]">
 
-      <section className="container mx-auto px-6 pt-8 pb-16">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="grid md:grid-cols-3 gap-8">
+    <div className="text-center mb-12">
 
-          <div className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 hover:shadow-xl transition">
+      <span className="text-[#B98B62] uppercase tracking-[5px] text-sm font-semibold">
+        Why Choose Us
+      </span>
 
-            <div className="w-16 h-16 rounded-2xl bg-[#F5E6D3] flex items-center justify-center">
-              <Cake size={30} className="text-[#8B5E3C]" />
-            </div>
+      <h2
+        className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-[#3A2A1E]"
+        style={{ fontFamily: "Playfair Display" }}
+      >
+        Freshness You Can Taste
+      </h2>
 
-            <h3 className="mt-6 text-3xl font-bold font-semibold text-[#3A2A1E]">
-              Freshly Baked
-            </h3>
+      <p className="mt-4 text-[#6B5A4A] max-w-2xl mx-auto text-base sm:text-lg">
+        Every creation is handcrafted with premium ingredients, elegant
+        presentation and lots of love.
+      </p>
 
-            <p className="mt-3 text-[#5A4334] text-xl leading-8">
-              Premium ingredients and handcrafted recipes for exceptional taste.
-            </p>
+    </div>
 
-          </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-          <div className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 hover:shadow-xl transition">
+      {/* Card 1 */}
+      <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
 
-            <div className="w-16 h-16 rounded-2xl bg-[#F5E6D3] flex items-center justify-center">
-              <Sparkles size={30} className="text-[#8B5E3C]" />
-            </div>
-
-            <h3 className="mt-6 text-3xl font-bold font-semibold text-[#3A2A1E]">
-              Custom Designs
-            </h3>
-
-            <p className="mt-3 text-[#5A4334] text-xl leading-8">
-              Personalized cakes crafted for birthdays, weddings and celebrations.
-            </p>
-
-          </div>
-
-          <div className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 hover:shadow-xl transition">
-
-            <div className="w-16 h-16 rounded-2xl bg-[#F5E6D3] flex items-center justify-center">
-              <Truck size={30} className="text-[#8B5E3C]" />
-            </div>
-
-            <h3 className="mt-6 text-3xl font-bold font-semibold text-[#3A2A1E]">
-              Fast Delivery
-            </h3>
-
-            <p className="mt-3 text-[#5A4334] text-xl leading-8">
-              Reliable and timely delivery to make every occasion special.
-            </p>
-
-          </div>
-
+        <div className="w-16 h-16 rounded-2xl bg-[#F5E6D3] flex items-center justify-center">
+          <Cake size={30} className="text-[#8B5E3C]" />
         </div>
 
-      </section>
+        <h3 className="mt-6 text-2xl font-bold text-[#3A2A1E]">
+          Freshly Baked
+        </h3>
 
-      {/* About */}
-{/* About Section */}
+        <p className="mt-4 text-[#6B5A4A] leading-7">
+          Every cake is baked fresh daily using premium ingredients for
+          unmatched taste and quality.
+        </p>
 
-{/* About Section */}
+      </div>
 
-<section className="container mx-auto px-6 py-16">
+      {/* Card 2 */}
+      <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
 
-  <div className="bg-white rounded-[40px] shadow-xl p-12 md:p-16">
+        <div className="w-16 h-16 rounded-2xl bg-[#F5E6D3] flex items-center justify-center">
+          <Sparkles size={30} className="text-[#8B5E3C]" />
+        </div>
+
+        <h3 className="mt-6 text-2xl font-bold text-[#3A2A1E]">
+          Custom Designs
+        </h3>
+
+        <p className="mt-4 text-[#6B5A4A] leading-7">
+          Beautiful cakes crafted exactly the way you imagine for birthdays,
+          weddings and special celebrations.
+        </p>
+
+      </div>
+
+      {/* Card 3 */}
+      <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 sm:col-span-2 lg:col-span-1">
+
+        <div className="w-16 h-16 rounded-2xl bg-[#F5E6D3] flex items-center justify-center">
+          <Truck size={30} className="text-[#8B5E3C]" />
+        </div>
+
+        <h3 className="mt-6 text-2xl font-bold text-[#3A2A1E]">
+          Fast Delivery
+        </h3>
+
+        <p className="mt-4 text-[#6B5A4A] leading-7">
+          Safe and reliable doorstep delivery across Bengaluru with careful
+          handling and perfect presentation.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+{/* About */}
+<section className="py-14 lg:py-24 bg-white">
+
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <div className="text-center">
 
-      <p className="uppercase tracking-[8px] text-[#C89F7B] font-semibold text-sm mb-4">
-        OUR STORY
-      </p>
+      <span className="uppercase tracking-[5px] text-[#B98B62] text-sm font-semibold">
+        Our Story
+      </span>
 
       <h2
-        className="text-5xl md:text-6xl text-[#3A2A1E] mb-8"
-        style={{
-          fontFamily: "Cormorant Garamond",
-          fontWeight: 700,
-        }}
+        className="mt-4 text-3xl sm:text-4xl lg:text-6xl font-bold text-[#3A2A1E]"
+        style={{ fontFamily: "Playfair Display" }}
       >
         Crafted With Passion,
         <br />
         Served With Love
       </h2>
 
-      <div className="w-24 h-1 bg-[#C89F7B] mx-auto rounded-full mb-10"></div>
+      <div className="w-24 h-1 bg-[#8B5E3C] rounded-full mx-auto mt-6"></div>
 
     </div>
 
-    <div className="max-w-5xl mx-auto">
+    <div className="mt-10 max-w-4xl mx-auto">
 
-      <p className="text-xl leading-10 text-[#5A4334] text-center max-w-4xl mx-auto">
-  At <span className="font-semibold text-[#8B5E3C]">Pastry Mania</span>, every cake is handcrafted with love, premium ingredients, and creative designs. Whether it's a birthday, wedding, or special celebration, we make every moment sweeter.
-</p>
+      <p className="text-center text-[#5A4334] text-base sm:text-lg lg:text-xl leading-8">
+        At <span className="font-semibold text-[#8B5E3C]">Pastry Mania</span>,
+        we believe every celebration deserves something unforgettable.
+        Our cakes are handcrafted using premium ingredients, elegant
+        decoration and recipes perfected with years of passion.
+        Whether it's a birthday, anniversary, wedding or a surprise for
+        someone special, we create desserts that leave lasting memories.
+      </p>
 
-      <div className="grid md:grid-cols-3 gap-8 mt-16">
+    </div>
 
-        <div className="text-center">
+    {/* Statistics */}
 
-          <h3 className="text-5xl font-bold text-[#8B5E3C]">
-            1000+
-          </h3>
+    <div className="grid grid-cols-3 gap-4 md:gap-10 mt-14">
 
-          <p className="mt-2 text-gray-500">
-            Happy Customers
-          </p>
+      <div className="text-center">
 
+        <h3 className="text-3xl md:text-5xl font-bold text-[#8B5E3C]">
+          1000+
+        </h3>
+
+        <p className="mt-2 text-sm md:text-base text-gray-600">
+          Happy Customers
+        </p>
+
+      </div>
+
+      <div className="text-center">
+
+        <h3 className="text-3xl md:text-5xl font-bold text-[#8B5E3C]">
+          50+
+        </h3>
+
+        <p className="mt-2 text-sm md:text-base text-gray-600">
+          Signature Cakes
+        </p>
+
+      </div>
+
+      <div className="text-center">
+
+        <h3 className="text-3xl md:text-5xl font-bold text-[#8B5E3C]">
+          5★
+        </h3>
+
+        <p className="mt-2 text-sm md:text-base text-gray-600">
+          Customer Rating
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+    {/* Contact Section */}
+<section className="py-14 lg:py-24 bg-[#FFF8F0]">
+
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div className="text-center">
+
+      <span className="uppercase tracking-[5px] text-[#B98B62] text-sm font-semibold">
+        Contact Us
+      </span>
+
+      <h2
+        className="mt-4 text-3xl sm:text-4xl lg:text-6xl font-bold text-[#3A2A1E]"
+        style={{ fontFamily: "Playfair Display" }}
+      >
+        We'd Love To Serve You
+      </h2>
+
+      <p className="mt-5 text-[#5A4334] text-base sm:text-lg max-w-2xl mx-auto">
+        Visit our bakery or contact us anytime to order delicious cakes,
+        pastries and customised creations for every occasion.
+      </p>
+
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
+
+      {/* Address */}
+
+      <div className="bg-white rounded-3xl p-7 shadow-lg hover:shadow-2xl transition">
+
+        <div className="w-16 h-16 rounded-full bg-[#8B5E3C] flex items-center justify-center mx-auto">
+          <MapPin className="text-white" size={28} />
         </div>
 
-        <div className="text-center">
+        <h3 className="text-2xl font-bold text-center mt-6 text-[#3A2A1E]">
+          Address
+        </h3>
 
-          <h3 className="text-5xl font-bold text-[#8B5E3C]">
-            50+
-          </h3>
+        <p className="text-center mt-4 text-[#5A4334] leading-7">
+          Sarjapur–Bagalur Road
+          <br />
+          SNR 1, Near Vereti Apartment 2
+          <br />
+          Sarjapur, Anekal
+          <br />
+          Bengaluru – 562125
+        </p>
 
-          <p className="mt-2 text-gray-500">
-            Signature Cakes
-          </p>
+      </div>
 
+      {/* Phone */}
+
+      <div className="bg-white rounded-3xl p-7 shadow-lg hover:shadow-2xl transition">
+
+        <div className="w-16 h-16 rounded-full bg-[#8B5E3C] flex items-center justify-center mx-auto">
+          <Phone className="text-white" size={28} />
         </div>
 
-        <div className="text-center">
+        <h3 className="text-2xl font-bold text-center mt-6 text-[#3A2A1E]">
+          Call Us
+        </h3>
 
-          <h3 className="text-5xl font-bold text-[#8B5E3C]">
-            5★
-          </h3>
+        <p className="text-center mt-4 text-[#5A4334]">
+          Darshan A
+        </p>
 
-          <p className="mt-2 text-gray-500">
-            Customer Rating
-          </p>
+        <a
+          href="tel:6363322889"
+          className="block text-center mt-3 text-xl font-bold text-[#8B5E3C]"
+        >
+          +91 63633 22889
+        </a>
+
+      </div>
+
+      {/* Instagram */}
+
+      <div className="bg-white rounded-3xl p-7 shadow-lg hover:shadow-2xl transition">
+
+        <div className="w-16 h-16 rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 flex items-center justify-center mx-auto">
+          <Instagram className="text-white" size={28} />
+        </div>
+
+        <h3 className="text-2xl font-bold text-center mt-6 text-[#3A2A1E]">
+          Instagram
+        </h3>
+
+        <p className="text-center mt-4 text-[#5A4334]">
+          Follow our latest cake creations and offers.
+        </p>
+
+        <div className="text-center mt-6">
+
+          <a
+            href="https://www.instagram.com/_pastry_mania_?igsh=MWtidzlhenB1eHIyZw=="
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block bg-[#8B5E3C] hover:bg-[#6B4423] text-white px-6 py-3 rounded-full transition"
+          >
+            Follow Us
+          </a>
 
         </div>
 
@@ -270,157 +429,32 @@ export default function HomePage({ onEnter }: HomePageProps) {
   </div>
 
 </section>
-      {/* Stats */}
-      {/* Contact Section */}
 
-<section className="container mx-auto px-6 py-20">
+{/* Final CTA */}
 
-  <div className="text-center mb-14">
+<section className="bg-[#8B5E3C] py-16">
 
-    <p className="uppercase tracking-[8px] text-[#B78A5C] font-semibold text-sm">
-      CONTACT
-    </p>
+  <div className="max-w-5xl mx-auto px-4 text-center">
 
     <h2
-      className="text-5xl md:text-6xl text-[#3A2A1E] mt-4"
-      style={{
-        fontFamily: "Cormorant Garamond",
-        fontWeight: 700,
-      }}
+      className="text-3xl sm:text-4xl lg:text-5xl text-white font-bold"
+      style={{ fontFamily: "Playfair Display" }}
     >
-      Visit Pastry Mania
+      Ready To Order Your Dream Cake?
     </h2>
 
-    <p className="mt-5 text-xl text-[#5A4334] max-w-3xl mx-auto leading-9">
-      We'd love to be part of your celebrations.
-      Visit our bakery or contact us for fresh handcrafted cakes and customised creations.
+    <p className="mt-5 text-white/90 text-base sm:text-lg">
+      Freshly baked with premium ingredients and crafted with love for every celebration.
     </p>
 
-  </div>
-
-  <div className="grid md:grid-cols-3 gap-8">
-
-    {/* Address */}
-
-    <div className="bg-white rounded-[30px] p-10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 text-center border border-[#F3E6D9]">
-
-      <div className="w-20 h-20 mx-auto rounded-full bg-[#8B5E3C] flex items-center justify-center shadow-lg">
-
-        <MapPin size={34} className="text-white"/>
-
-      </div>
-
-      <h3 className="mt-7 text-3xl font-bold text-[#3A2A1E]">
-        Address
-      </h3>
-
-      <p className="mt-5 text-[#5A4334] leading-8">
-
-        Sarjapur–Bagalur Road,
-        <br/>
-
-        SNR 1, Near Vereti Apartment 2,
-        <br/>
-
-        Sarjapur,
-        Anekal,
-        <br/>
-
-        Bengaluru - 562125
-
-      </p>
-
-    </div>
-
-    {/* Phone */}
-
-    <div className="bg-white rounded-[30px] p-10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 text-center border border-[#F3E6D9]">
-
-      <div className="w-20 h-20 mx-auto rounded-full bg-[#8B5E3C] flex items-center justify-center shadow-lg">
-
-        <Phone size={34} className="text-white"/>
-
-      </div>
-
-      <h3 className="mt-7 text-3xl font-bold text-[#3A2A1E]">
-        Contact
-      </h3>
-
-      <p className="mt-5 text-[#5A4334]">
-
-        Darshan A
-
-      </p>
-
-      <a
-        href="tel:6363322889"
-        className="mt-3 inline-block text-2xl font-bold text-[#8B5E3C] hover:underline"
-      >
-        +91 63633 22889
-      </a>
-
-    </div>
-
-    {/* Instagram */}
-
-    <div className="bg-white rounded-[30px] p-10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 text-center border border-[#F3E6D9]">
-
-      <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] flex items-center justify-center shadow-lg">
-
-        <Instagram size={34} className="text-white"/>
-
-      </div>
-
-      <h3 className="mt-7 text-3xl font-bold text-[#3A2A1E]">
-        Instagram
-      </h3>
-
-      <p className="mt-5 text-[#5A4334]">
-
-        Follow us for our latest cakes, offers and customised creations.
-
-      </p>
-
-      <a
-        href="https://www.instagram.com/_pastry_mania_?igsh=MWtidzlhenB1eHIyZw=="
-        target="_blank"
-        rel="noreferrer"
-        className="mt-5 inline-block bg-[#8B5E3C] hover:bg-[#6B4423] text-white px-8 py-3 rounded-full font-semibold transition-all duration-300"
-      >
-        Follow Us
-      </a>
-
-    </div>
-
-  </div>
-
+    <button
+      onClick={onEnter}
+      className="mt-8 bg-white text-[#8B5E3C] px-8 py-4 rounded-full font-semibold hover:scale-105 transition"
+    >
+      Explore Menu
+    </button>
+</div> 
 </section>
-
-      <section className="bg-[#8B5E3C] text-white py-16">
-
-        <div className="container mx-auto text-center px-6">
-
-          <h2
-            className="text-5xl"
-            style={{ fontFamily: "Playfair Display" }}
-          >
-            Ready To Order?
-          </h2>
-
-          <p className="mt-4 text-xl opacity-90">
-            Explore our collection and find the perfect cake.
-          </p>
-
-          <button
-            onClick={onEnter}
-            className="mt-8 bg-white text-[#8B5E3C] px-8 py-4 rounded-full font-semibold"
-          >
-            Explore Menu
-          </button>
-
-        </div>
-
-      </section>
-    </div>
+</div>
   );
 }

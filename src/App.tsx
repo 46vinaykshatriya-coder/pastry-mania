@@ -1,18 +1,18 @@
-import { useState, useMemo } from 'react';
-import Header from './components/Header';
-import SearchBar from './components/SearchBar';
-import CategoryBar from './components/CategoryBar';
-import CakeCard from './components/CakeCard';
-import CakeModal from './components/CakeModal';
-import ContactDrawer from './components/ContactDrawer';
-import HomePage from './pages/HomePage';
-import { cakes, Cake } from './data/cakes';
+import { useState, useMemo } from "react";
+import Header from "./components/Header";
+import SearchBar from "./components/SearchBar";
+import CategoryBar from "./components/CategoryBar";
+import CakeCard from "./components/CakeCard";
+import CakeModal from "./components/CakeModal";
+import ContactDrawer from "./components/ContactDrawer";
+import HomePage from "./pages/HomePage";
+import { cakes, Cake } from "./data/cakes";
 
 function App() {
   const [showHome, setShowHome] = useState(true);
 
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedCake, setSelectedCake] = useState<Cake | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -21,7 +21,7 @@ function App() {
     const allCategories = Array.from(
       new Set(cakes.map((cake) => cake.category))
     );
-    return ['All', ...allCategories];
+    return ["All", ...allCategories];
   }, []);
 
   const filteredCakes = useMemo(() => {
@@ -31,7 +31,7 @@ function App() {
         .includes(searchTerm.toLowerCase());
 
       const matchesCategory =
-        selectedCategory === 'All' ||
+        selectedCategory === "All" ||
         cake.category === selectedCategory;
 
       return matchesSearch && matchesCategory;
@@ -45,7 +45,7 @@ function App() {
 
   const handlePurchaseCake = (
     cake: Cake,
-    quantity: 'full' | 'half' = 'full'
+    quantity: "full" | "half" = "full"
   ) => {
     const message = encodeURIComponent(
       `Hi Pastry Mania! I would like to order ${cake.name}`
@@ -53,7 +53,7 @@ function App() {
 
     window.open(
       `https://wa.me/6363322889?text=${message}`,
-      '_blank'
+      "_blank"
     );
   };
 
@@ -63,14 +63,10 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-     <Header
-  onContactClick={() => setIsContactOpen(true)}
- onLogoClick={() => {
-  console.log("Before:", showHome);
-  setShowHome(true);
-  console.log("Clicked Logo");
-}}
-/>
+      <Header
+        onContactClick={() => setIsContactOpen(true)}
+        onLogoClick={() => setShowHome(true)}
+      />
 
       <SearchBar
         searchTerm={searchTerm}
@@ -83,7 +79,7 @@ function App() {
         onCategoryChange={setSelectedCategory}
       />
 
-      <main className="container mx-auto px-4 py-6">
+      <main className="container mx-auto px-3 sm:px-4 lg:px-6 py-6">
         {filteredCakes.length === 0 ? (
           <div className="text-center py-12">
             <p className="text-gray-500 text-lg">
@@ -91,7 +87,7 @@ function App() {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {filteredCakes.map((cake) => (
               <CakeCard
                 key={cake.id}

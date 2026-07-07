@@ -10,14 +10,14 @@ export default function SearchBar({
   onSearchChange,
 }: SearchBarProps) {
   return (
-    <section className="bg-[#FFF8F0] py-10">
+    <section className="bg-[#FFF8F0] py-6 sm:py-8 md:py-10">
 
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
 
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
 
           <h2
-            className="text-5xl text-[#3A2A1E]"
+            className="text-3xl sm:text-4xl md:text-5xl text-[#3A2A1E]"
             style={{
               fontFamily: "Cormorant Garamond",
               fontWeight: 700,
@@ -31,8 +31,8 @@ export default function SearchBar({
         <div className="relative">
 
           <Search
-            size={22}
-            className="absolute left-6 top-1/2 -translate-y-1/2 text-[#8B5E3C]"
+            size={20}
+            className="absolute left-5 top-1/2 -translate-y-1/2 text-[#8B5E3C]"
           />
 
           <input
@@ -42,15 +42,17 @@ export default function SearchBar({
             placeholder="Search cakes..."
             className="
               w-full
-              pl-16
-              pr-6
-              py-5
+              pl-14
+              pr-5
+              py-3
+              sm:py-4
               rounded-full
               bg-white
               border
               border-[#E8D8C8]
               shadow-lg
-              text-lg
+              text-base
+              sm:text-lg
               outline-none
               focus:ring-4
               focus:ring-[#EAD8C5]
