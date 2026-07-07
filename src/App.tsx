@@ -47,8 +47,32 @@ function App() {
     cake: Cake,
     quantity: "full" | "half" = "full"
   ) => {
+    const price =
+      quantity === "full"
+        ? cake.price
+        : Math.round(cake.price / 2);
+
     const message = encodeURIComponent(
-      `Hi Pastry Mania! I would like to order ${cake.name}`
+`🎂 *New Cake Order*
+
+🍰 *Cake:*
+${cake.name}
+
+📦 *Quantity:*
+${quantity === "full" ? "Full Cake" : "Half Cake"}
+
+💰 *Price:*
+₹${price}
+
+👤 *Name:*
+
+📍 *Delivery Address:*
+
+📞 *Contact Number:*
+
+📝 *Special Instructions:*
+
+Thank you! 😊`
     );
 
     window.open(

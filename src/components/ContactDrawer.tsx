@@ -61,7 +61,7 @@ export default function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
           </a>
 
           <a
-            href="mailto:pastrymaniaimmadhihalli@gmail.com"
+            href="mailto:Pastrymaniasarjapura@gmail.com"
             className="flex items-center gap-4 p-4 bg-[#F5E6D3] hover:bg-[#6B4423]/20 rounded-xl transition-all"
           >
             <div className="p-3 bg-brand-teal rounded-full">
@@ -70,7 +70,7 @@ export default function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
             <div className="flex-1 min-w-0">
               <div className="text-xs text-gray-500 uppercase">Email</div>
               <div className="font-semibold text-brand-dark truncate">
-                pastrymaniaimmadhihalli@gmail.com
+                Pastrymaniasarjapura@gmail.com
               </div>
             </div>
           </a>
