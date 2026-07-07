@@ -43,44 +43,47 @@ function App() {
     setIsModalOpen(true);
   };
 
-  const handlePurchaseCake = (
-    cake: Cake,
-    quantity: "full" | "half" = "full"
-  ) => {
-    const price =
-      quantity === "full"
-        ? cake.price
-        : Math.round(cake.price / 2);
+ const handlePurchaseCake = (
+  cake: Cake,
+  quantity: "full" | "half" = "full"
+) => {
+  const price =
+    quantity === "full"
+      ? cake.price
+      : (cake.price_half ?? cake.price_half ?? Math.round(cake.price / 2));
 
-    const message = encodeURIComponent(
-`🎂 *New Cake Order*
+  const message = encodeURIComponent(
+`NEW CAKE ORDER
 
-🍰 *Cake:*
+Cake
 ${cake.name}
 
-📦 *Quantity:*
+Quantity
 ${quantity === "full" ? "Full Cake" : "Half Cake"}
 
-💰 *Price:*
+Price
 ₹${price}
 
-👤 *Name:*
+Customer Name:
 
-📍 *Delivery Address:*
+Delivery Address:
 
-📞 *Contact Number:*
+Contact Number:
 
-📝 *Special Instructions:*
+Preferred Delivery Date:
 
-Thank you! 😊`
-    );
+Preferred Delivery Time:
 
-    window.open(
-      `https://wa.me/6363322889?text=${message}`,
-      "_blank"
-    );
-  };
+Special Instructions:
 
+Thank you.`
+  );
+
+  window.open(
+    `https://wa.me/6363322889?text=${message}`,
+    "_blank"
+  );
+};
   if (showHome) {
     return <HomePage onEnter={() => setShowHome(false)} />;
   }
